@@ -1,0 +1,3 @@
+packages: .
+constraints:
+	xmobar +all_extensions
