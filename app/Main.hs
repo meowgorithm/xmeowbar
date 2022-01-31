@@ -1,8 +1,16 @@
 module Main where
 
 import Xmobar
-    ( Config(..), Date(Date), Monitors(Wireless, Memory, Uptime, Cpu, Network, DiskU), Runnable(Run)
+    ( Config(..), Date(Date)
+    , Monitors(Wireless, Memory, Uptime, Cpu, Network, DiskU), Runnable(Run)
     , StdinReader(StdinReader), XPosition(BottomP), defaultConfig, xmobar )
+
+
+main :: IO ()
+main =
+    xmobar config
+
+
 config :: Config
 config =
     defaultConfig
@@ -24,7 +32,3 @@ config =
     , alignSep = "}{"
     , template = " %StdinReader% } <fc=#505050>%date%</fc> { %enp78s0%   %disku%   %cpu%   %uptime%   %memory% "
     }
-
-main :: IO ()
-main =
-    xmobar config
