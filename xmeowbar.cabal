@@ -14,4 +14,4 @@ executable xmeowbar
     ghc-options: -rtsopts -with-rtsopts=-V0 -threaded
     build-depends:
         base >= 4.14.1.0 && < 5
-      , xmobar == 0.42
+      , xmobar == 0.44.2
