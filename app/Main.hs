@@ -3,7 +3,7 @@ module Main where
 import Xmobar
     ( Config(..), Date(Date)
     , Monitors(Wireless, Memory, Uptime, Cpu, Network, DiskU), Runnable(Run)
-    , StdinReader(StdinReader), XPosition(BottomP), defaultConfig, xmobar )
+    , StdinReader(StdinReader), XPosition(Top), defaultConfig, xmobar )
 
 
 main :: IO ()
@@ -18,7 +18,7 @@ config =
     , bgColor  = "#262626"
     , alpha    = 216
     , fgColor  = "#777777"
-    , position = BottomP 0 0
+    , position = Top
     , commands = [ Run $ Date "星期%u %Y年%m月%d日 %H:%M" "date" 600
                  , Run $ Wireless "wlp76s0" [ "-x", "", "-t", "<essid>" ] 100
                  , Run StdinReader
